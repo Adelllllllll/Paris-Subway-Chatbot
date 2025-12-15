@@ -1,0 +1,23 @@
+# Environnements virtuels
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+
+# Variables d'environnement & Secrets (CRITIQUE)
+.env
+.env.local
+secrets.toml
+
+# Streamlit
+.streamlit/
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+
+# Logs & Data (optionnel si tu veux ignorer les gros datasets)
+logs/
+*.log
