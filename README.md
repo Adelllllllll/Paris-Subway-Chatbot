@@ -75,7 +75,7 @@ streamlit run app.py
 ```
 
 ## 📂 Structure du Projet
-
+```bash
 ├── app.py              # Point d'entrée Streamlit
 ├── backend/            
 │   ├── core.py         # Logique du Chatbot (Prompt Augmentation)
@@ -87,6 +87,8 @@ streamlit run app.py
 │   └── evaluate.py     # Script de calcul des métriques
 ├── requirements.txt
 └── README.md
+```
+
 
 ## 👤 Auteur 
 Adel ZAIRI & Jiwoo CHOI
