@@ -1,0 +1,10 @@
+streamlit
+mistralai
+python-dotenv
+pandas
+numpy
+requests
+beautifulsoup4
+markdownify
+lxml
+tenacity

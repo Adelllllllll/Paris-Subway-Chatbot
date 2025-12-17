@@ -1,0 +1,29 @@
+id,Description,file_format,file_type
+Arrets-lignes,"Ce jeu de données liste toutes les lignes du réseau francilien et les arrêts desservis pour chacune de ces lignes comme dans le GTFS. Les arrêts des lignes RER et Transilien SNCF sont des zone d'arrêts, elles sont identifiées dans le GTFS ainsi : (ID IDFM:monomodalStopPlace:XXXXXX). les arrêts des autres lignes sont des arrêts de référence, ils sont identifiés dans le GTFS ainsi : (ID IDFM:XXXXXX)",csv,dataset
+Description et tarif des titres de transport en Ile-de-France,Descriptif des titres de transport valables en Ile-de-France.,csv,dataset
+Perimetre-des-donnees-tr-disponibles-plateforme-idfm,"Liste des arrêts et lignes intégrés à la plateforme d'échanges de données Temps Réel d’île-de-France Mobilités (pour diffusion en Open Data).  
+Île-de-France Mobilités donne accès aux données temps réel sur ce périmètre d'arrêts, via le portail PRIM.  Les services proposés sont les suivants :  Prochains horaires de passages à un arrêt en temps réel (via deux API différentes selon la source des données - plateforme d'échanges Île-de-France Mobilités ou bien le canal Vianavigo) ; Informations de perturbation en temps réel pour une ligne ou un arrêt ; Prochains horaires de passages sur l'ensemble des arrêts disponibles (en un seul échange) en temps réel.",csv,dataset
+Referentiel-des-arrets,"Ce jeu de données propose les arrêts de référence du référentiel des arrêts d'Île-de-France. Ces arrêts correspondent aux endroits, tels que des plateformes, zones ou quais/voies, où le voyageur attend, monte ou descend du véhicule. ",csv,dataset
+Referentiel-des-arrets-relations,Ce jeu de données propose l'ensemble des relations entre les objets du référentiel des arrêts d'Île-de-France,csv,dataset
+Referentiel-des-arrets-zones-d-arrets,Ce jeu de données propose les zones d'arrêts du référentiel des arrêts d'Île-de-France. Cela représente les zones monomodales basés avant tout sur une cohérence commerciale (et géographique) : connu du public sous la même appellation commerciale. ,csv,dataset
+Referentiel-des-lignes,"Liste des lignes commerciales de transport en commun (train, RER, métro, tramway, bus et car), actives et prochainement active circulant en Île-de-France. ",csv,dataset
+Sanitaires-reseau-ratp,"Ce jeu de données contient la liste des toilettes accessibles au public depuis le réseau RATP, en précisant les conditions d'accès (gratuit / payant), la localisation en zone de contrôlée ou pas, et l'accessibilité aux personnes à mobilité réduite (PMR). La localisation des sanitaires est approximative.",csv,dataset
+swagger_Calculateur Ile-de-France Mobilités - Accès générique (v2),"L’API Calculateur Ile-de-France Mobilités – Accès générique (Navitia) regroupe un ensemble de services permettant aux voyageurs de consulter les informations sur les réseaux de transport Franciliens.
+À travers ces différents chemins, le calculateur vous permet de faire : la recherche de lieux, la recherche d’itinéraires, la découverte des horaires de passages théoriques, et le calcul d’itinéraires.
+",json,API-swagger
+swagger_Calculateur-ile-de-france-mobilités-isochrones-(v2),"Le service ""Calculateur Île-de-France Mobilités - Isochrones"" permet de connaître l’accessibilité d’un territoire géographique en transport en commun pour un laps de temps donné. Ce service s’appuie sur la technologie Navitia et retourne des résultats sous forme d’objets JSON. ",json,API-swagger
+swagger_Calculateur-ile-de-france-mobilités-message-info-trafic-(v2),"L’API Calculateur Ile-de-France Mobilités – Messages Info Trafic (Navitia) donne l’ensemble des informations concernant les perturbations sur le trafic (incidents, travaux prévus et non prévus...).
+Ce service s’appuie sur la technologie Navitia et retourne des résultats sous forme d’objets JSON. ",json,API-swagger
+swagger_Les prochains passages à un arrêt particulier,"Horaires estimés des prochains passages aux arrêts.
+Actuellement, les horaires de prochains passages à un arrêt en temps réel ne sont disponibles que pour une partie du réseau d’Ile-de-France. L’ensemble des arrêts du réseau seront progressivement disponibles.
+Le Jeu de données Périmètre des données temps réel disponibles sur la plateforme d'échanges Île-de-France Mobilités expose la liste des arrêts par ligne/ transporteurs concernés par ce service.
+Les requêtes et réponses sont exprimées au format SIRI Lite, vous trouverez plus d’informations sur ce format d’échange de données dans la documentation technique.
+",json,API-swagger
+swagger_Les prochains passages pour toutes les lignes disponibles sur le réseau,"Prochains horaires de passages en temps réel de l'ensemble des arrêts du réseau actuellement disponibles en un seul échange.
+A ce jour, ce service n’est disponible que pour une partie du réseau d’Ile-de-France. L’ensemble des arrêts du réseau seront progressivement disponibles.
+Le Jeu de données Périmètre des données temps réel disponibles expose la liste des arrêts par ligne/ transporteur concernés par ce service.
+Les requêtes et réponses sont exprimées au format SIRI Lite, vous trouverez plus d’informations sur ce format d’échange de données dans la documentation technique.
+",json,API-swagger
+Accessibilite-en-gare,"Le Jeu de données sur les accessibilité contient toutes les gares d'Ile de France. Il décrit le niveau d'accessibilité des gares/zone d'arrêts.  
+Pour le niveau 3 d'accessibilité, en gare, la SNCF accepte les personnes n'ayant pas réservé d'assistance et ils garantissent une obligation de moyens. En passant par la réservation la SNCF doit fournir une obligation de résultat. 
+Niveaux : 1 – Gare ou arrêt non accessible ; 3 – Train accessible sur réservation préalable auprès du service Assist’enGare ; 4 – Train accessible sur demande auprès d’un agent en station ; 6 – Véhicule accessible en toute autonomie ",csv,dataset

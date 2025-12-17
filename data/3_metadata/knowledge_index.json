@@ -1,0 +1,122 @@
+[
+    {
+        "doc_id": "doc_000",
+        "doc_title": "Bonnes Pratiques (Global)",
+        "category": "General",
+        "filename": "bonnes_pratiques_dutilisation_des_api__bonnes-pratiques-dutilisation-des-api.md",
+        "summary": "Règles applicables à TOUTES les API : Quotas, Compression Gzip, Gestion des erreurs.",
+        "related_technical_assets": [
+             {
+                "type": "note",
+                "description": "Applicable à tous les fichiers Swagger."
+             }
+        ]
+    },
+    {
+        "doc_id": "doc_001",
+        "doc_title": "Description du Service (Prochains Passages)",
+        "category": "Prochains Passages",
+        "filename": "description_du_service__description-du-service.md",
+        "related_technical_assets": [
+            { "type": "api_definition", "filename": "swagger_Les prochains passages pour toutes les lignes disponibles sur le réseau.json" },
+            { "type": "api_definition", "filename": "swagger_Les prochains passages à un arrêt particulier.json" }
+        ]
+    },
+    {
+        "doc_id": "doc_002",
+        "doc_title": "Identification des Objets",
+        "category": "Prochains Passages",
+        "filename": "identification_des_objets__identification-des-objets.md",
+        "related_technical_assets": [
+            { "type": "api_definition", "filename": "swagger_Les prochains passages pour toutes les lignes disponibles sur le réseau.json" },
+            { "type": "api_definition", "filename": "swagger_Les prochains passages à un arrêt particulier.json" }
+        ]
+    },
+    {
+        "doc_id": "doc_003",
+        "doc_title": "Focus Requêtes Globales vs Unitaires",
+        "category": "Prochains Passages",
+        "filename": "focus_sur_les_requêtes_globale_et_unitaire__focus-sur-les-requetes-globale-et-unitaire.md",
+        "related_technical_assets": [
+            { "type": "api_definition", "filename": "swagger_Les prochains passages pour toutes les lignes disponibles sur le réseau.json" },
+            { "type": "api_definition", "filename": "swagger_Les prochains passages à un arrêt particulier.json" }
+        ]
+    },
+    {
+        "doc_id": "doc_004",
+        "doc_title": "Structure et Paramètres d'appel",
+        "category": "Prochains Passages",
+        "filename": "structure_des_requêtes_-_paramètres_dappel__structure-des-requetes-parametres-dappel.md",
+        "related_technical_assets": [
+            { "type": "api_definition", "filename": "swagger_Les prochains passages pour toutes les lignes disponibles sur le réseau.json" },
+            { "type": "api_definition", "filename": "swagger_Les prochains passages à un arrêt particulier.json" }
+        ]
+    },
+    {
+        "doc_id": "doc_005",
+        "doc_title": "Interprétation de la Réponse",
+        "category": "Prochains Passages",
+        "filename": "prise_en_compte_de_la_réponse__prise-en-compte-de-la-reponse.md",
+        "related_technical_assets": [
+            { "type": "api_definition", "filename": "swagger_Les prochains passages pour toutes les lignes disponibles sur le réseau.json" },
+            { "type": "api_definition", "filename": "swagger_Les prochains passages à un arrêt particulier.json" }
+        ]
+    },
+    {
+        "doc_id": "doc_006",
+        "doc_title": "Qualité des Données (Calculateur)",
+        "category": "Calculateur",
+        "filename": "qualité_des_données__qualite-des-donnees.md",
+        "related_technical_assets": [
+            { "type": "api_definition", "filename": "swagger_Calculateur Ile-de-France Mobilités - Accès générique (v2).json" },
+            { "type": "api_definition", "filename": "swagger_Calculateur-ile-de-france-mobilités-isochrones-(v2).json" }
+        ]
+    },
+    {
+        "doc_id": "doc_007",
+        "doc_title": "Paramètres d'appel (Calculateur)",
+        "category": "Calculateur",
+        "filename": "paramètres_dappel__parametres-dappel.md",
+        "related_technical_assets": [
+            { "type": "api_definition", "filename": "swagger_Calculateur Ile-de-France Mobilités - Accès générique (v2).json" },
+            { "type": "api_definition", "filename": "swagger_Calculateur-ile-de-france-mobilités-isochrones-(v2).json" }
+        ]
+    },
+    {
+        "doc_id": "doc_008",
+        "doc_title": "Paramètre URI Navitia",
+        "category": "Calculateur",
+        "filename": "utiliser_le_paramètre_uri_dans_lapi_générique_navitia__utiliser-le-parametre-uri-dans-lapi-generique-navitia.md",
+        "related_technical_assets": [
+            { "type": "api_definition", "filename": "swagger_Calculateur Ile-de-France Mobilités - Accès générique (v2).json" },
+            { "type": "api_definition", "filename": "swagger_Calculateur-ile-de-france-mobilités-isochrones-(v2).json" }
+        ]
+    },
+    {
+        "doc_id": "doc_009",
+        "doc_title": "API Info Trafic V2",
+        "category": "Info Trafic",
+        "filename": "api_calculateur_ile-de-france_mobilites_-_messages_info_trafic_v2__api-calculateur-ile-de-france-mobilites-messages-info-trafic-v2.md",
+        "related_technical_assets": [
+            { "type": "api_definition", "filename": "swagger_Calculateur-ile-de-france-mobilités-message-info-trafic-(v2).json" }
+        ]
+    },
+    {
+        "doc_id": "doc_010",
+        "doc_title": "API Info Trafic (Globale)",
+        "category": "Info Trafic",
+        "filename": "api_messages_info_trafic_-_requête_globale__api-messages-info-trafic-requete-globale.md",
+        "related_technical_assets": [
+            { "type": "api_definition", "filename": "swagger_Calculateur-ile-de-france-mobilités-message-info-trafic-(v2).json" }
+        ]
+    },
+    {
+        "doc_id": "doc_011",
+        "doc_title": "API Messages Ecrans",
+        "category": "Info Trafic",
+        "filename": "api_messages_affichés_sur_les_écrans__api-messages-affiches-sur-les-ecrans.md",
+        "related_technical_assets": [
+            { "type": "api_definition", "filename": "swagger_Calculateur-ile-de-france-mobilités-message-info-trafic-(v2).json" }
+        ]
+    }
+]

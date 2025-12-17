@@ -2,52 +2,46 @@
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![Streamlit](https://img.shields.io/badge/UI-Streamlit-red)
-![RATP API](https://img.shields.io/badge/Data-RealTime-green)
+![PRIM API](https://img.shields.io/badge/Data-RealTime-green)
 
 ## 📋 Contexte du Projet
 
-Ce projet est un **Proof of Concept (POC)** d'un assistant conversationnel intelligent dédié aux usagers du métro parisien.
+Ce projet est un **Proof of Concept (POC)** d'un assistant conversationnel intelligent dédié aux usagers des transports en commun parisiens.
 
-L'objectif est de démontrer comment une architecture **LLM modulaire** peut transformer une demande en langage naturel en requêtes API techniques précises, pour fournir des informations d'itinéraires et d'horaires en temps réel, tout en étant rigoureusement évalué.
+L'objectif est de démontrer comment une architecture **RAG Agentique** peut transformer une demande en langage naturel en requêtes API techniques précises, pour fournir des informations d'itinéraires et d'horaires en temps réel, tout en limitant les hallucinations.
 
 ## 🏗️ Architecture de la Solution
 
-L'application repose sur un pipeline séquentiel clair, allant de l'augmentation du prompt à la génération finale.
+L'application repose sur un pipeline séquentiel clair :
 
-### Flux de données (Data Flow)
-
-1.  **Interface Utilisateur (Streamlit)** : L'utilisateur pose une question en langage naturel (ex: *"Je veux aller de Châtelet à La Défense, il est 14h"*).
-2.  **Prompt Augmentation** : La requête brute est enrichie via un *System Prompt* qui injecte le contexte, la date actuelle et les consignes de comportement.
-3.  **Router & Tool Selection** : Le modèle (LLM) analyse la demande enrichie pour décider quelle API interroger (Itinéraire, Horaires, Info Trafic) et construit la requête technique.
-4.  **API Execution** : Le système interroge l'API RATP (ou Open Data) et récupère les données brutes (JSON).
-5.  **Response Generation** : Le LLM synthétise les données techniques en une réponse naturelle et utile pour l'utilisateur.
-
-### Pipeline d'Évaluation
-
-Pour garantir la fiabilité, une boucle d'évaluation compare les sorties du chatbot avec des données de référence (Ground Truth) :
-* **Input** : Dataset de questions types.
-* **Process** : Génération de réponse par le bot.
-* **Eval** : Comparaison sémantique et factuelle entre la réponse générée et les "documents véridiques" (réponse attendue) pour calculer un score de précision.
+1.  **Interface Utilisateur (Streamlit)** : L'utilisateur pose une question (ex: *"Je veux aller de Châtelet à La Défense"*).
+2.  **Router & Data Selection** : Le LLM analyse la demande pour décider s'il a besoin d'un dataset statique (CSV) ou d'une API temps réel.
+3.  **RAG (Retrieval)** : Le système consulte un **Index de Connaissances** pour récupérer la documentation technique et le schéma approprié.
+4.  **API Execution** : Construction et exécution de la requête vers l'API PRIM/RATP.
+5.  **Response Generation** : Synthèse des données techniques en réponse naturelle.
 
 ## 🛠️ Stack Technique
 
 * **Frontend** : Streamlit
-* **Moteur IA** : OpenAI GPT-4o / Mistral (via API)
-* **Data Source** : API RATP / PRIM (Ile-de-France Mobilités)
-* **Orchestration** : LangChain / Custom Python Logic
-* **Évaluation** : Pytest + Framework d'eval (ex: Ragas ou DeepEval)
+* **Moteur IA** : LLM via API (ex: Google Gemini, Mistral AI)
+* **Data Source** : API PRIM (Ile-de-France Mobilités) & Datasets Open Data
 
 ## 🚀 Installation et Démarrage
 
 ### 1. Cloner le projet
-
 ```bash
-git clone [https://github.com/Adelllllllll/Paris-Subway-Chatbot.git](https://github.com/Adelllllllll/Paris-Subway-Chatbot.git)
+git clone https://github.com/Adelllllllll/Paris-Subway-Chatbot.git
 cd Paris-Subway-Chatbot
 ```
 
-### 2. Créer l'environnement virtuel
+### 2. Récupérer les données (Critique) ⚠️
+Les fichiers de données volumineux (CSV) ne sont pas stockés sur GitHub.
+1.  Téléchargez l'archive **`1_raw_data.zip`** via ce lien : [**Google Drive Link**](https://drive.google.com/drive/u/5/folders/12xumsjusEErf3lzNyObJuMtXUU20cGi-)
+2.  Décompressez-la dans le dossier `data/` pour obtenir : `data/1_raw_data/datasets/...`
 
+> *Pour plus de détails sur la construction des données, voir [data/DataPrep_README.md](data/DataPrep_README.md).*
+
+### 3. Environnement Virtuel
 ```bash
 python -m venv venv
 # Windows
@@ -55,40 +49,35 @@ python -m venv venv
 # Mac/Linux
 source venv/bin/activate
 ```
-### 3. Installer les dépendances
 
+### 4. Dépendances & Config
 ```bash
 pip install -r requirements.txt
 ```
-
-### 4. Configuration
-
-```bash
-MISTRAL_KEY=votre_cle_mistral
-RATP_API_KEY=votre_cle_ratp
+Créez un fichier `.env` à la racine et ajoutez vos clés :
+```properties
+LLM_API_KEY=votre_cle_api_ici
+RATP_API_KEY=votre_cle_prim_ici
 ```
 
 ### 5. Lancer l'interface
-
 ```bash
 streamlit run app.py
 ```
 
 ## 📂 Structure du Projet
-```bash
-├── app.py              # Point d'entrée Streamlit
-├── backend/            
-│   ├── core.py         # Logique du Chatbot (Prompt Augmentation)
-│   ├── tools.py        # Connecteurs API RATP
-│   └── prompts.py      # Templates de prompts
+
+```text
+├── app.py                  # Point d'entrée Streamlit
+├── backend/                # Cerveau de l'IA (Agent, Tools)
+├── src/                    # Scripts utilitaires (Data Prep)
 ├── data/
-│   └── eval_dataset.csv # Dataset de questions/réponses véridiques
-├── evaluation/
-│   └── evaluate.py     # Script de calcul des métriques
+│   ├── 1_raw_data/         # CSV Lourds (Non versionnés, voir Drive)
+│   ├── 2_clean_markdown/   # Documentation nettoyée
+│   └── 3_metadata/         # Index, Schémas et Swaggers (Le "Cerveau" Data)
 ├── requirements.txt
 └── README.md
 ```
 
-
-## 👤 Auteur 
+## 👤 Auteurs
 Adel ZAIRI & Jiwoo CHOI

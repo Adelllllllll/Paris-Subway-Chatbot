@@ -18,6 +18,11 @@ secrets.toml
 .idea/
 .DS_Store
 
-# Logs & Data (optionnel si tu veux ignorer les gros datasets)
+# Logs
 logs/
 *.log
+
+# Ignorer les données brutes lourdes
+data/1_raw_data/
+# Mais on garde la structure des dossiers (optionnel mais propre)
+!data/1_raw_data/.gitkeep
